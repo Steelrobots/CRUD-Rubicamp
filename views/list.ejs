@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD (create, Read, Update, Delete)</title>
+
+</head>
+
+<body>
+    <div>
+        <h1>CRUD (create, Read, Update, Delete)</h1>
+        <a href="/add" class="create">Create</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Name</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                    <th>Birth Date</th>
+                    <th>Is Married</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <%data.forEach((item,index)=>{ %>
+                    <%if(item.married){ %>
+                        <%married="Yes" %>
+                            <tr>
+                                <td>
+                                    <%= index +1 %>
+                                </td>
+                                <td>
+                                    <%= item.name %>
+                                </td>
+                                <td>
+                                    <%= item.height %>
+                                </td>
+                                <td>
+                                    <%= item.weight %>
+                                </td>
+                                <td>
+                                    <%= item.birthdate %>
+                                </td>
+                                <td>
+                                    <%= married %>
+                                </td>
+                                <td>
+                                    <a href="/edit/<%= index%> ">Update</a>&nbsp <a href="/delete/<%= index%>"
+                                        onclick="return confirmation('<%= item.name%>')">Delete</a>
+                                </td>
+
+                            </tr>
+                            <% } %>
+                                <%if(!item.married){ %>
+                                    <%married="Not Yet" %>
+                                        <tr>
+                                            <td>
+                                                <%= index +1 %>
+                                            </td>
+                                            <td>
+                                                <%= item.name %>
+                                            </td>
+                                            <td>
+                                                <%= item.height %>
+                                            </td>
+                                            <td>
+                                                <%= item.weight %>
+                                            </td>
+                                            <td>
+                                                <%= item.birthdate %>
+                                            </td>
+                                            <td>
+                                                <%= married %>
+                                            </td>
+                                            <td>
+                                                <a href="/edit/<%= index%> ">Update</a>&nbsp <a
+                                                    href="/delete/<%= index%>"
+                                                    onclick="return confirmation('<%= item.name%>')">Delete</a>
+                                            </td>
+
+                                        </tr>
+                                        <% } %>
+                                            <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function confirmation(name) {
+            const answer = confirm(`Apakah kamu yakin akan menghapus data '${name}'`)
+            if (answer) {
+                return true
+            } else return false
+        }
+    </script>
+
+</body>
+
+</html>
