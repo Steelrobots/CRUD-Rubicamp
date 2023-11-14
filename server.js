@@ -39,7 +39,7 @@ app.post('/add', (req, res) => {
         obj.push(newData)
     }
     console.log(newData)
-    fs.writeFileSync(datapath, JSON.stringify(obj), 'utf-8')
+    fs.writeFileSync(datapath, JSON.stringify(obj, null, 3), 'utf-8')
     res.redirect('/')
 })
 
@@ -63,14 +63,14 @@ app.post('/edit/:index', (req, res) => {
         obj.push(obj[index])
     }
     console.log(obj[index])
-    fs.writeFileSync(datapath, JSON.stringify(obj), 'utf-8')
+    fs.writeFileSync(datapath, JSON.stringify(obj, null, 3), 'utf-8')
     res.redirect('/')
 })
 
 app.get('/delete/:index', (req, res) => {
     const index = req.params.index;
     obj.splice(index, 1);
-    fs.writeFileSync(datapath, JSON.stringify(obj), 'utf-8')
+    fs.writeFileSync(datapath, JSON.stringify(obj, null, 3), 'utf-8')
     res.redirect('/')
 })
 

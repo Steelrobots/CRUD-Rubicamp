@@ -1,1 +1,30 @@
-[{"name":"Himawan","height":"162","weight":"80.62","birthdate":"1991-11-23","married":false},{"name":"Rahmat","height":171,"weight":57.699,"birthdate":"1996-11-03","married":true},{"name":"Himawan","height":"162","weight":"80.62","birthdate":"1991-11-23","married":false},{"name":"Andri","height":"165","weight":"65","birthdate":"1996-04-02","married":false}]
+[
+   {
+      "name": "Himawan",
+      "height": "162",
+      "weight": "80.62",
+      "birthdate": "1991-11-23",
+      "married": false
+   },
+   {
+      "name": "Rahmat",
+      "height": 171,
+      "weight": 57.699,
+      "birthdate": "1996-11-03",
+      "married": true
+   },
+   {
+      "name": "Himawan",
+      "height": "162",
+      "weight": "80.62",
+      "birthdate": "1991-11-23",
+      "married": false
+   },
+   {
+      "name": "Rizky",
+      "height": "170",
+      "weight": "67.45",
+      "birthdate": "1994-11-24",
+      "married": true
+   }
+]
