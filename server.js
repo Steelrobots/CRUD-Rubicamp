@@ -57,13 +57,11 @@ app.post('/edit/:index', (req, res) => {
     }
     if (obj[index].married == 'true') {
         obj[index].married = true
-        obj.push(obj[index])
     } else {
         obj[index].married = false
-        obj.push(obj[index])
     }
     console.log(obj[index])
-    fs.writeFileSync(datapath, JSON.stringify(obj, null, 3), 'utf-8')
+    fs.writeFileSync(datapath, JSON.stringify(obj), 'utf-8')
     res.redirect('/')
 })
 

@@ -50,9 +50,6 @@ tr:nth-child(even) {
     text-decoration: none;
 }
 
-.careat.create {
-    background-color: rgb(57, 89, 255);
-}
 
 form {
     border: 1px;
