@@ -34,8 +34,11 @@ app.post('/add', (req, res) => {
     if (newData.married == 'true') {
         newData.married = true
         obj.push(newData)
-    } else {
+    } else if (newData.married == 'false') {
         newData.married = false
+        obj.push(newData)
+    } else if (newData.married == 'null') {
+        newData.married = null
         obj.push(newData)
     }
     console.log(newData)
@@ -57,11 +60,13 @@ app.post('/edit/:index', (req, res) => {
     }
     if (obj[index].married == 'true') {
         obj[index].married = true
-    } else {
+    } else if (obj[index].married == 'false') {
         obj[index].married = false
+    } else if (obj[index].married == 'null') {
+        obj[index].married = null
     }
     console.log(obj[index])
-    fs.writeFileSync(datapath, JSON.stringify(obj), 'utf-8')
+    fs.writeFileSync(datapath, JSON.stringify(obj, null, 3), 'utf-8')
     res.redirect('/')
 })
 
